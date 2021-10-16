@@ -1,4 +1,4 @@
-import { executeOrTimeout } from "./util";
+import { executeOrTimeout, promiseWithTimeout } from "./util";
 
 const longTimeout = 5000;
 const shortTimeout = 50;
@@ -30,8 +30,24 @@ async function testExecuteOrTimeout() {
     }
 }
 
+async function testPromiseWithTimeout() {
+    console.log('============== TEST promiseWithTimeout Fn ===');
+    try {
+        const firstUserPromise = getUser(firstUserID);
+        const firstUser = await promiseWithTimeout(firstUserPromise, longTimeout, `Request "Get User" with ID ${firstUserID} was canceled by timeout ${longTimeout}`);
+        console.log('The First User is: ', firstUser);
+
+        const secondUserPromise = getUser(secondUserID);
+        const secondUser = await promiseWithTimeout(secondUserPromise, shortTimeout, `Request "Get User" with ID ${secondUserID} was canceled by timeout ${shortTimeout}`);
+        console.log('The Second User is: ', secondUser);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 async function test() {
     await testExecuteOrTimeout();
+    await testPromiseWithTimeout();
 }
 
 test();

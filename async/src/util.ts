@@ -14,3 +14,12 @@ export function executeOrTimeout<T>(originalFunc: (...args) => Promise<T>, ms: n
     }
     return fn;
 }
+
+/** Creates a Promise that is resolved or rejected by timeout. */
+export function promiseWithTimeout<T>(targetPromise: Promise<T>, ms: number, timeoutErrorMessage: string): Promise<T> {
+    const timeoutPromise = new Promise<never>((unused, reject) => {
+        setTimeout(() => { reject(new Error(timeoutErrorMessage)) }, ms);
+    });
+    return Promise.race<T>([targetPromise, timeoutPromise]);
+}
+
