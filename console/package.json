@@ -1,0 +1,17 @@
+{
+  "name": "@ts-example/console",
+  "version": "1.0.0",
+  "description": "Samples for console",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanNikitenko/ts-example.git"
+  },
+  "author": "Roman Nikitenko",
+  "bugs": {
+    "url": "https://github.com/RomanNikitenko/ts-example/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.11.2"
+  }
+}
