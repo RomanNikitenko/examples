@@ -24,39 +24,41 @@ const testArray = [
 ];
 
 // **************************************************
-console.log();
-console.log('===== log(testObj) =====');
+console.log('\n===== log(testObj) =====');
 console.log(testObj);
 
 // **************************************************
 // add nesting
-console.log();
-console.log('===== log( { testObj } ) =====');
+console.log('\n===== log( { testObj } ) =====');
 console.log({ testObj });
 
 // **************************************************
 // use 'depth' parameter 
-console.log();
-console.log('===== dir with parameters =====');
+console.log('\n===== dir with parameters =====');
 console.dir({ testObj }, { depth: 10, showHidden: true, colors: true });
 
 // **************************************************
-console.log();
-console.trace('Some trace');
+console.trace('\nSome trace');
 
 // **************************************************
-console.log();
-console.log('===== console.table() =====');
+console.log('\n===== console.table() =====');
 console.table(testArray);
 
 // **************************************************
-console.log();
-console.log('===== Print \'keys\' of an object =====');
+console.log('\n===== Print \'keys\' of an object =====');
 console.log(Object.keys(console));
 
 // **************************************************
-console.log();
-console.log('===== test console.time() =====');
+console.log('\n===== test assert() =====');
+const expected = 200;
+const actual = 404;
+// do nothing - everything is OK
+console.assert(expected * 1 === expected, `Unexpected response: ${actual}`);
+// print error message, but without interrupting execution
+console.assert(actual * 1 === expected, `Unexpected response: ${actual}`);
+
+// **************************************************
+console.log('\n===== test console.time() =====');
 testConsoleTime();
 
 function testConsoleTime() {
