@@ -45,6 +45,21 @@ console.log('\n===== console.table() =====');
 console.table(testArray);
 
 // **************************************************
+console.log('\n===== ability to print ASCII symbols as is =====');
+// here I just copied the table from terminal and put it as is to log
+console.log(`
+┌─────────┬──────────┬─────┬───────────┐
+│ (index) │   name   │ age │   city    │
+├─────────┼──────────┼─────┼───────────┤
+│    0    │  'Tom'   │ 33  │  'Roma'   │
+│    1    │ 'Robert' │ 15  │ 'London'  │
+│    2    │ 'Thomas' │ 12  │  'Paris'  │
+│    3    │ 'David'  │ 23  │ 'Mexico'  │
+│    4    │  'Kate'  │ 18  │ 'Toronto' │
+└─────────┴──────────┴─────┴───────────┘
+`);
+
+// **************************************************
 console.log('\n===== Print \'keys\' of an object =====');
 console.log(Object.keys(console));
 
