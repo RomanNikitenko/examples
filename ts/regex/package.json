@@ -10,11 +10,37 @@
   "bugs": {
     "url": "https://github.com/RomanNikitenko/ts-example/issues"
   },
-  "dependencies": {},
+  "type": "module",
   "devDependencies": {
-    "@types/node": "^16.11.2"
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.2",
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.2"
   },
   "scripts": {
+    "test": "jest",
     "test:regex": "tsc && node lib/env-var-regex.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageDirectory": "./coverage",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
   }
 }
