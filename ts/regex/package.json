@@ -1,0 +1,20 @@
+{
+  "name": "@ts-example/regex",
+  "version": "1.0.0",
+  "description": "Samples for regex",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanNikitenko/ts-example.git"
+  },
+  "author": "Roman Nikitenko",
+  "bugs": {
+    "url": "https://github.com/RomanNikitenko/ts-example/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.11.2"
+  },
+  "scripts": {
+    "test:regex": "tsc && node lib/env-var-regex.js"
+  }
+}
