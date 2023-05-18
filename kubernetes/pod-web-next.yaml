@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-next
+  labels:
+    app: latest-next
+spec:
+  containers:
+  - name: web
+    image: quay.io/rnikitenko/web-nodejs-sample:next
