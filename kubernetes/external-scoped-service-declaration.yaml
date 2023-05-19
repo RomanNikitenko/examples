@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-declaration
+  name: external-scoped-service-declaration
 spec:
   type: NodePort
   ports: 
