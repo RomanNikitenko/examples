@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-next-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: latest-next
+  template:
+    metadata:
+      labels:
+        app: latest-next
+    spec:
+      containers:
+        - name: web-next-container
+          image: quay.io/rnikitenko/web-nodejs-sample:next
