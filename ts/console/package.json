@@ -12,7 +12,8 @@
   },
   "scripts": {
     "compile": "tsc -b",
-    "test:console": "yarn compile && node lib/console"
+    "test:console": "yarn compile && node lib/console",
+    "test:read-tokens": "yarn compile && node lib/readfile"
   },
   "dependencies": {},
   "devDependencies": {

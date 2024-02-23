@@ -1,0 +1,2 @@
+https://oauth2:298_some_symbols_here_8a4@gitlab.com
+https://oauth2:gho_FKe_some_symbols_here_dmJ1@github.com
