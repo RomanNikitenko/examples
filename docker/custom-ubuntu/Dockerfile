@@ -2,20 +2,16 @@
 
 FROM ubuntu:20.04
 RUN apt-get update && \
-    apt-get install -y curl && \
+    apt-get install -y curl wget bash tar  && \
     apt-get install -y gnupg
 
-RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+RUN curl -sSLO "https://nodejs.org/download/release/v16.20.0/node-v16.20.0-linux-x64.tar.gz"
 
-RUN echo "deb https://deb.nodesource.com/node_16.x focal main" > /etc/apt/sources.list.d/nodesource.list
+RUN tar -xf node-v16.20.0-linux-x64.tar.gz
 
-RUN apt-get update
+RUN NODE="node-v16.20.0-linux-x64/bin/node"
 
-RUN apt-get install -y nodejs
-
-RUN node -v
-
-ENV VSCODE_NODEJS_RUNTIME_DIR="/usr/bin"
+ENV VSCODE_NODEJS_RUNTIME_DIR="${NODE}"
 
 # add a custom entrypoint
 COPY --chmod=755 entrypoint.sh /
