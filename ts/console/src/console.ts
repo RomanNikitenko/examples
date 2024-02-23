@@ -73,6 +73,20 @@ console.assert(expected * 1 === expected, `Unexpected response: ${actual}`);
 console.assert(actual * 1 === expected, `Unexpected response: ${actual}`);
 
 // **************************************************
+console.log('\n===== test randomString(length: number) =====');
+
+function randomString(length: number): string {
+  let result = '';
+  while (result.length < length) {
+    result += 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'[
+      (Math.random() * 60) | 0
+    ];
+  }
+  return result;
+}
+console.log('Random string: ', randomString(5).toLowerCase());
+
+// **************************************************
 console.log('\n===== test console.time() =====');
 testConsoleTime();
 
@@ -84,4 +98,3 @@ function testConsoleTime() {
     }, 130);
 }
 // **************************************************
-
